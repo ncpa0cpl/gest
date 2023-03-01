@@ -1,5 +1,5 @@
 import { OutputBuffer } from "termx-markup";
-import type { It, Test, TestHook } from "../user-land";
+import type { It, Test, TestHook } from "../user-land/test-collector";
 export type TestUnit = {
     dirname: string;
     basename: string;

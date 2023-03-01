@@ -202,7 +202,7 @@ var TestRunner = class {
     const outputFile = testUnit.testFile + ".bundled.js";
     const mapFile = outputFile + ".map";
     const isOutputAbsolute = outputFile.startsWith("/");
-    const importPath = "file://" + (isOutputAbsolute ? outputFile : path.join(getCwd(), outputFile));
+    const importPath = "file://" + (isOutputAbsolute ? outputFile : path.resolve(getCwd(), outputFile));
     const relativePath = "." + importPath.replace("file://" + getCwd(), "").replace(/\.bundled\.js$/, "");
     try {
       if (!this.testFileMatches(testUnit.testFile)) {

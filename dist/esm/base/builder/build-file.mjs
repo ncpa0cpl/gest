@@ -1,11 +1,11 @@
 // src/base/builder/build-file.ts
 import { Command } from "../command/command.mjs";
-import { getCwd } from "../utils/cwd.mjs";
+import { getDirname } from "../utils/get-dirname.mjs";
 import path from "../utils/path.mjs";
 async function _buildFile(params) {
   const { input, output, mainSetup, fileSetup } = params;
   const args = [
-    path.join(getCwd(), "gest/dist/esm/test-builder.mjs"),
+    path.join(getDirname(import.meta.url), "test-builder.mjs"),
     input,
     output
   ];
